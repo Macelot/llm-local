@@ -32,7 +32,9 @@ pip install -r requirements.txt
 # 7. Criar pasta para modelos
 mkdir models
 
-# 8. Baixar e Mover seu modelo (https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/blob/main/mistral-7b-instruct-v0.2.Q4_0.gguf) 
+# 8. Baixar e Mover seu modelo de
+[https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/blob/main/mistral-7b-instruct-v0.2.Q4_0.gguf](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/blob/main/mistral-7b-instruct-v0.2.Q4_0.gguf)
+
 # para a pasta models
 mv /caminho/do/mistral-7b-instruct.gguf models/
 
@@ -194,14 +196,11 @@ class LocalLLM:
         return prompt.strip()
 
 def main():
-    # Caminho do modelo
     MODEL_PATH = "models/mistral-7b-instruct.gguf"
     
-    # Inicializar LLM
     print("🚀 Inicializando LLM Local...")
     llm = LocalLLM(MODEL_PATH)
     
-    # Menu de opções
     while True:
         print("\n" + "="*50)
         print("LLM Local - Mistral 7B")
@@ -256,7 +255,6 @@ if __name__ == "__main__":
 # src/config.py
 import os
 
-# Configurações do modelo
 MODEL_CONFIG = {
     "path": "models/mistral-7b-instruct.gguf",
     "context_size": 2048,
@@ -267,7 +265,6 @@ MODEL_CONFIG = {
     "max_tokens": 512
 }
 
-# Configurações do sistema
 SYSTEM_CONFIG = {
     "name": "Mistral 7B Local",
     "version": "1.0.0",
@@ -297,7 +294,7 @@ def get_system_info():
 
 
 # 12. Criar codigo do Chat 
-# run.py
+#run.py
 #!/usr/bin/env python3
 """
 Script principal para rodar a LLM local
@@ -354,7 +351,7 @@ print('Resposta:', response['choices'][0]['text'])
 
 
 # 16. otimização
-# src/optimize.py
+#src/optimize.py
 """
 Otimizações para melhor performance
 """
