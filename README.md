@@ -1,9 +1,3 @@
----
-noteId: "d618dfa0ff7b11f09255056be076a49d"
-tags: []
-
----
-
 # 1. Criar pasta do projeto
 mkdir llm_local
 cd llm_local
