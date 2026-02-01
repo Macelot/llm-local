@@ -15,9 +15,9 @@ python3 -m venv venv
 source venv/bin/activate
 
 # 4. Ativar ambiente (Windows)
-# venv\Scripts\activate
+venv\Scripts\activate
 
-# 5. cria arquivo requirements.txt
+# 5. Criar arquivo requirements.txt
 llama-cpp-python==0.2.45
 numpy>=1.24.0
 transformers>=4.35.0
@@ -34,20 +34,18 @@ mkdir models
 
 # 8. Baixar e Mover seu modelo (https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/blob/main/mistral-7b-instruct-v0.2.Q4_0.gguf) 
 # para a pasta models
-# mv /caminho/do/mistral-7b-instruct.gguf models/
+mv /caminho/do/mistral-7b-instruct.gguf models/
 
 # 9. Criar codigo Python para CHAT 
 # llm_chat.py - 30 linhas
 from llama_cpp import Llama
 
-#  Configurar
 model = Llama(
     model_path="models/mistral-7b-instruct.gguf",
     n_ctx=2048,
     verbose=False
 )
 
-#  Função de chat
 def chat():
     print("Chat com Mistral 7B (digite 'sair')")
     
@@ -67,7 +65,6 @@ def chat():
         # 15: Mostrar resposta
         print(f"Mistral: {response['choices'][0]['text'].strip()}")
 
-#  Rodar
 if __name__ == "__main__":
     chat()
 
@@ -77,7 +74,7 @@ python llm_chat.py
 
 
 
-# se desejar aprimorar, podemos separar os códigos em 3 etapas: 10, 11 e 12
+# Se desejar aprimorar, podemos separar os códigos em 3 etapas: 10, 11 e 12
 # 10. Criar codigo Python para juntar tudo 
 #src/main.py
 from llama_cpp import Llama
