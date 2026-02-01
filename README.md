@@ -12,6 +12,7 @@ source venv/bin/activate
 venv\Scripts\activate
 
 # 5. Criar arquivo requirements.txt
+```
 llama-cpp-python==0.2.45
 numpy>=1.24.0
 transformers>=4.35.0
@@ -19,6 +20,7 @@ sentence-transformers>=2.2.0
 fastapi>=0.104.0
 uvicorn>=0.24.0
 pydantic>=2.5.0
+```
 
 # 6. Instalar dependências
 pip install -r requirements.txt
