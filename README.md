@@ -39,6 +39,7 @@ mkdir models
 mv /caminho/do/mistral-7b-instruct.gguf models/
 
 # 9. Criar codigo Python para CHAT 
+```
 # llm_chat.py - 30 linhas
 from llama_cpp import Llama
 
@@ -69,7 +70,7 @@ def chat():
 
 if __name__ == "__main__":
     chat()
-
+```
 
 # FEITO, basta rodar no terminal
 python llm_chat.py    
@@ -78,6 +79,7 @@ python llm_chat.py
 
 # Se desejar aprimorar, podemos separar os códigos em 3 etapas: 10, 11 e 12
 # 10. Criar codigo Python para juntar tudo 
+```
 #src/main.py
 from llama_cpp import Llama
 import time
@@ -247,11 +249,12 @@ def main():
 
 if __name__ == "__main__":
     main()
-
+```
 
 
 
 # 11. Criar codigo Python para configurações 
+```
 # src/config.py
 import os
 
@@ -290,10 +293,11 @@ def get_system_info():
         "cores": multiprocessing.cpu_count(),
         "python_version": platform.python_version()
     }
-
+```
 
 
 # 12. Criar codigo do Chat 
+```
 #run.py
 #!/usr/bin/env python3
 """
@@ -323,7 +327,7 @@ if __name__ == "__main__":
     
     # Rodar main
     main()
-
+```
 
 PRONTO python run.py
 op 2
@@ -336,6 +340,7 @@ tree llm_local/
 python run.py
 
 # 15. Teste rápido no terminal
+```
 python -c "
 from llama_cpp import Llama
 import sys
@@ -347,10 +352,11 @@ llm = Llama(model_path=model_path, n_ctx=512)
 response = llm('Olá, como você está?', max_tokens=50)
 print('Resposta:', response['choices'][0]['text'])
 "
-
+```
 
 
 # 16. otimização
+```
 #src/optimize.py
 """
 Otimizações para melhor performance
@@ -392,3 +398,4 @@ class OptimizedLLM:
         cores = multiprocessing.cpu_count()
         # Usar 75% dos cores disponíveis
         return max(1, int(cores * 0.75))
+```
